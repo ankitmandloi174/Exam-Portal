@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Login Page</title>
+    <style type="text/css">
+    *{
+            box-sizing: border-box;
+            padding:0px;
+            margin:0px;
+            text-decoration: none;
+            list-style: none;
+    }
+    body{
+        background-image:url(https://preview.pixlr.com/images/800wm/1151/2/1151119067.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100%;
+    }
+           
+
+        
+        input{
+            display: block;
+            width: 300px;
+            height: 50px;
+            border-radius: 20px;
+           padding: 19px;
+            
+            margin-left: 581px;
+
+        }
+        input:hover{
+            border-color:#63df63;
+            background-color:greenyellow;
+        }
+        #ID{
+            margin-top: 203px ;
+        }
+        #course{
+            margin-top: 21px;
+        }
+
+      #pass{
+         margin-top: 21px;
+      }
+        #login{
+              
+              width: 122px;
+            height: 59px;
+            margin-top: 21px;
+            margin-left: 659px;
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+            }
+            #confirm{
+                margin-top: 21px;
+            }
+            select{
+                margin-left: 583px;
+                margin-top: 21px;
+                width: 295px;
+                height: 59px;
+                border: 2px solid black;
+                border-radius: 20px ;
+                
+            }
+            select:hover{
+            border-color:#63df63;
+            background-color:greenyellow;
+        }
+            #message1{
+                margin-left: 600px;
+               color: red;
+            }
+    </style>
+</head>
+<body>
+    <form action="registration.jsp" method="post" onsubmit="return check()">
+        <input type="text" placeholder="Your Id" id="ID" name="email" required>
+        <input type="password" placeholder="Set password " id="pass" name="password" required>
+        <span id="message1"> </span>
+        <input type="password" placeholder="Confirm password "  name="confirmpassword"  id="confirm">
+        <!--<input type="text" name="course" placeholder="your course here" id="course" required>-->
+        <select name="courses" id="lang">
+        <option value="CS">Computer Science</option>
+        <option value="IT">IT</option>
+        <option value="IOT">IOT</option>
+        <option value="Mechanical">Mechanical</option>
+        <option value="AI">AI</option>
+        
+      </select>
+        <input type="submit"  value="Submit" id="login">
+   </form>
+    <script>
+        
+          
+              
+            function check()
+            {
+                var find=document.getElementById("ID").value;
+                var start=find.substring(0,2);
+                if(find.includes("@medicaps.ac.in")==false || start!="en")
+                {
+                   
+                    alert("enter correct maail");
+                    return false;
+                }
+                var pass=document.getElementById('pass').value;
+                var confirm=document.getElementById('confirm').value;
+                if(pass!=confirm)
+                {
+                   document.getElementById('message1').innerHTML="**password do not match";
+                    return false;
+                }
+                else
+                return true;
+            }
+            
+           
+    </script>
+</body>
+</html>
